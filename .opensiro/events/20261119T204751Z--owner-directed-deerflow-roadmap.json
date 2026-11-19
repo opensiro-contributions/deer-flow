@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "20261119T204751Z--owner-directed-deerflow-roadmap",
+  "recorded_at": "2026-11-19T20:47:51.478Z",
+  "actor": "OpenSiro project owner (current-chat retry instruction)",
+  "kind": "DECISION",
+  "decision": "single-harness new roadmap intake; ATTENTION=ACTIVE; OWNER_CONTROL=ALLOW",
+  "evidence_urls": [
+    "https://github.com/opensiro/upstream/issues/58"
+  ],
+  "note": "Current chat explicitly instructed another upstream roadmap attempt after 23 initial issue-queue cases had current records. DeerFlow is an additional new candidate, not part of the 23 and not covered by their prior mass activation. Internal research/bootstrap only; no external issue, PR, comment, code implementation or public fork Issue authorized.",
+  "next_action": "Persist the independently validated Human/AI/receipt roadmap case on opensiro/meta and link from a reviewable internal Upstream status PR."
+}

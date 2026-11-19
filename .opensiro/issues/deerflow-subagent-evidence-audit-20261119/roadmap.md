@@ -1,0 +1,82 @@
+# DeerFlow — independent subagent evidence-to-correction S3* roadmap, 2026-11-19
+
+## Identity and pins
+
+- Original repository: bytedance/deer-flow
+- Original HEAD: b4b489d7f2fb22fc88305a26e1c6e6077b497216
+- Observed at: 2026-11-19
+- Accepted Index assessment: https://github.com/opensiro/vsm-harness-index/blob/c2e43bf4750841277b3e58d8ba80314121734764/assessments/de/deerflow.md
+- Accepted assessment blob SHA: 3a57781223e3378bc53f4822bd9a3ae7673a691c
+- Accepted review ref: 6f81daefff2035d76d41e45d021626f022885372
+- Accepted reviewed at: 2026-09-15
+- System in focus: DeerFlow's first-party Gateway/lead-agent/subagent runtime including direct task() and durable subagent batches, status receipts, acceptance criteria, optional extensions, and ordinary parent policy; installed third-party extensions and maintainer PR triage excluded as organizational functions
+- Profile version: 0.2.1
+- Assessment procedure version: 0.3.1
+- Receipt contract: proposal-gate
+- Result: NEEDS_EVIDENCE
+- External issue: DRAFT — NOT PUBLISHED
+- Cost status: NOT_MEASURED
+- Repository-wide source map: root README and docs/ARCHITECTURE.md; backend packages harness agents/lead_agent, agents/middlewares, subagents, runtime, scheduler, extensions, skills/mutations, reflection, knowledge, guardrails, config; backend Gateway API, sandbox, authz, frontend browser batch review, contracts, examples, native backend/tests and CI plus LICENSE/CONTRIBUTING. This is a bounded codepath census not an assertion every source line was manually inspected.
+- Priority rationale: after screening all six functions, S3* has a concrete within-boundary corrective-evidence mismatch: completed subagent results can pass through despite unchecked/failed quality criteria, and the defined selective judge setting lacks an invoker. S1 operation and S2 dependency gating already have reusable paths; parent S3/S5 boundaries must remain intact; S4 skills evolution is being addressed separately in first-party RFCs. P0 therefore challenges whether a developer-composed independent review actor adds a distinct binding result to existing advisory checks.
+- Accepted VSM vector: S1=A · S2=— · S3=— · S3*=— · S4=— · S5=—
+- Target transition: S3*=— -> S3*=C
+- P1 dependencies: Confirm maintainer preference for binding acceptance vs advisory inspection; model-specific evidence/tool access through authorized identities; status/contract compatibility; cancellation, lease, batch continuation/recovery, and duplicate-work safeguards. Inspect any future original PR before implementation.
+- P2 optional: Consider cross-batch reviewer reuse or user-facing evidence inspector only after P0 evidence; no S4 or S5 promotion requested.
+- Proposed C construction: An opt-in first-party review slot after a completed subagent result but before downstream accepted-item release; developer attaches a separate autonomous reviewer with scoped read-only primary evidence, a typed accept/request_changes/reject judgment, bounded return to task/batch rework and durable recheck receipt, with existing parent rights and quotas enforced.
+- C sufficiency falsifier: Existing native receipt/checklist/AgentRuns paths already allow an independently informed reviewer to block downstream acceptance and obtain a corrected subsequent run without extra integration, OR a reviewer given only the same self-report cannot make a distinct grounded choice, OR the proposed rejection cannot safely return to work without duplicate side effects.
+- Scenario basis: HYPOTHETICAL
+- Proposal-stage decision: GO
+- Research disposition: NEEDS_EVIDENCE
+- Proposed validation: Deterministic simulated subagent reports (false completed file claim, unresolved research claim, legitimate correct result) with separate evidence for reviewer; prove accept/hold/rework then later result, negative permissions, absent reviewer, missing evidence, lease loss, concurrent retry and cancellation, with unchanged baseline and native proposal comparator.
+- Validation state: NOT_RUN
+- Proposal falsifier: No distinct independent evidence/decision and no binding downstream effect beyond native advisory inspection; or native equivalent exists on the same frozen source, making the on-top constructor redundant.
+- S1 disposition: A historical; current lead/worker model-tool loops do operational task execution; preserve, not target.
+- S2 disposition: — historical; current bounded batch dependencies and FIFO capacity constrain conflict via runtime but autonomous S2 ownership not established; no extra S2 constructor qualified by this task.
+- S3 disposition: — historical; configurable quotas, Goal/Run controls and lead supervision constrain work; no separate autonomous whole-system current commitment decision established in the scoped scenario; preserve parent controls.
+- S3* disposition: — historical; current deterministic receipts, citation cross-checks, acceptance checks and observational guidance exist, but optional autonomous independent evidence auditor with binding corrective return is not established; selected C hypothesis.
+- S4 disposition: — historical; memory and skill-mutation host enable reuse and guarded publication, while RFC #7066 eval-gated self-evolution is pending; neither proves a separate prospective external-environment strategy owner within this selected scenario; defer.
+- S5 disposition: — historical; authentication, human tool approval, policy/grants and configured goals remain legitimate parent/operator authority; do not invent policy transfer.
+
+## Rights and authority
+
+[Original MIT LICENSE](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/LICENSE) and [CONTRIBUTING](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/CONTRIBUTING.md) inspected at original SHA. Contributor instructions require disclosure of AI assistance in original PRs, native testing and normal review; no external Issue/PR/comment or product code is authorized by this roadmap. The fork `opensiro-contributions/deer-flow` is GitHub-verified parented exactly to `bytedance/deer-flow` and had no `opensiro/meta` at preflight. A new case is outside the original 23-item #58 cohort; any initial metadata grant refers solely to the current direct owner instruction for this *internal research case*, not the historical all-23 activation. The `opensiro/meta` bootstrap must be read back before declaring persistence. A public fork GitHub Issue or third-party publication requires distinct exact current-conversation approval and is not being created.
+
+## Existing work / overlap
+
+[Lead-agent construction](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/agents/lead_agent/agent.py) and [subagent task/status contract](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/subagents/status_contract.py) implement S1 delegation. [Subagent capacity](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/subagents/capacity.py) and [batch dependencies](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/subagents/batch_dependencies.py) supply native runtime gating, including [merged PR #7839](https://github.com/bytedance/deer-flow/pull/7839) for explicit prerequisites and follow-up. These do not by themselves establish independent evidence-based audit.
+
+[Tool receipts/citation check](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/agents/middlewares/receipt_verification.py), [acceptance checklist](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/subagents/acceptance_checks.py), [report contract](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/subagents/report_contract.py) and [delegation ledger](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/agents/middlewares/delegation_ledger.py) form shipped advisory validation. The [batch finalizer](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/subagents/batch_service.py) explicitly catches acceptance-check exceptions as advisory and finalizes `succeeded=result.status is SubagentStatus.COMPLETED` while storing `acceptance_verdict` separately. [VerificationConfig](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/backend/packages/harness/deerflow/config/verification_config.py) declares default-off `judge_enabled` and `judge_model_name`; a bounded source-wide reference scan found no runtime consumption of these fields beyond configuration. The unused options are evidence of a seam, not proof of a reviewer.
+
+[Original RFC #4651](https://github.com/bytedance/deer-flow/issues/4651) CLOSED; [PR #4659](https://github.com/bytedance/deer-flow/pull/4659) MERGED (tool receipts); [#5109](https://github.com/bytedance/deer-flow/pull/5109) MERGED (deterministic acceptance); [#5090](https://github.com/bytedance/deer-flow/pull/5090) MERGED (report contract); [#5289](https://github.com/bytedance/deer-flow/pull/5289) MERGED (durable batch criteria); [#6416](https://github.com/bytedance/deer-flow/pull/6416) MERGED (bounded inspection); [#6509](https://github.com/bytedance/deer-flow/pull/6509) CLOSED UNMERGED (artifact inspection). Do not open a duplicate original issue or claim the merged partial layers already close independent corrective ownership. [Agent eval RFC #4083](https://github.com/bytedance/deer-flow/issues/4083) OPEN and [PR #4070](https://github.com/bytedance/deer-flow/pull/4070) OPEN (external reproducible eval platform, not live subagent reviewer). [Skill evolution RFC #7066](https://github.com/bytedance/deer-flow/issues/7066) OPEN; [host API documentation](https://github.com/bytedance/deer-flow/blob/b4b489d7f2fb22fc88305a26e1c6e6077b497216/docs/skill-evolution-host.md) shows extension-driven mutation and bounded parent grants, a separate S4-adjacent path.
+
+## Function ownership
+
+The historical Index assessment pinned at 2026-09-15 remains `A — — — — —`, not a regraded 2026-11-19 current-HEAD assessment. Current worker/subagent operations belong to S1; batch FIFO and dependencies are executor mechanisms and cannot be promoted automatically to agent-owned S2. Lead/Goal and quotas are task/parent operational management, not a demonstrated whole-system autonomous S3. S3* requires distinct reviewer sensing with genuine corrective-feedback relation, not self-report validation alone. Run memories, guarded skill updates and provider selection do not establish a separate forward-looking environmental S4 loop here. S5 remains operator policy. Recursion: reviewer can assess one nested delegation only within its exact workspace/role rights; it cannot inherit parent S5 rights.
+
+## Capability priority
+
+**P0:** optional developer-composable S3* evidence reviewer for a supported task/batch, separate read access, typed judgment, binding hold/rework and later observation; not a mandatory default reviewer. **P1:** prove access, identity, failure/cancel/restart and non-duplication, and reconcile with original maintainers' #4651 layered verification scope. **P2:** NONE for this first proposal. A narrow GO is permitted at proposal stage but is falsified if native advisory mechanisms already provide the same completed correction loop or no separate evidential viewpoint is possible.
+
+## Implementation options
+
+Track A: caller/lead manually inspects deterministic acceptance failures and resubmits work; for simple `file:exists`, `tests_passed` and receipt claims this is cheaper. Shipped batch status stores evidence but does not enforce reviewer veto. Track B option 1: use existing `VerificationConfig` selective judge as a report-only annotation (insufficient S3*). Option 2 (selected): introduce a scoped reviewer invocation as a composable owner at the subagent completion seam, obtaining independently read primary artifact evidence and returning a bounded decision to a native hold/rework/observe sequence; preserve event/attempt lineage. Option 3: external app orchestrates two separate AgentRuns and prevents a publish action (possible counterfactual, but developer reimplements task identity/cancellation/leases; compare experimentally). Option 4: human-only approval via existing policy (parent-governed, not autonomous S3*). No claim of shipping or measured benefit is made.
+
+## Parallel contribution-on-top review
+
+- Evaluation object: Independent evidence-based optional audit-to-correction loop for a completed but acceptance-unverified DeerFlow subagent task or batch item, not generic governance or tool receipt logging.
+- Existing-work overlap: Shipped RFC #4651 Layers 1/2 plus report contracts, durable batch checks, bounded inspection; open evaluation/skill RFCs and merged dependencies; current checks remain advisory.
+- Our on-top contribution: Reuse those deterministic checks while adding only the missing independent reviewer decision with bounded evidence access and binding corrective return at completion, rather than parallel tool receipt, queue or storage systems.
+- Incremental benefit: A hypothetically false-but-plausible report with undecidable factual claims can be held and corrected without the lead simply trusting it; the gain, cost, independent-evidence quality and mandatory safety are NOT_MEASURED / NOT_TESTED.
+- Decision scope: Source-bounded S3*=— -> C proposal for direct and durable subagent acceptance. No original maintainer approval, no current-grade change and no claim that all batch validations are unsafe.
+
+## Specification and domain alternatives
+
+Do not change Profile, Skills or the canonical Index as part of this proposal. A domain-specific comparative benchmark can test the independent reviewer hypothesis, with evidence provenance, costs and subsequent operations tracked separately; it is not a product feature request.
+
+## Cost experiment
+
+NOT_MEASURED. Compare (A) shipped receipt + deterministic checklist + lead/manual inspection against (B) opt-in reviewer only when criteria are UNVERIFIED or independently contradicted, including extra model calls, evidence fetches, retry/recovery overhead, original task correctness and long-term maintenance. Any claimed reduced costs or correctness requires a real paired run, not an architectural diagram.
+
+## Delivery and publication
+
+**PLAN_ONLY**, proposal-stage `GO`, research `NEEDS_EVIDENCE`, `Validation state: NOT_RUN`. Source and Index checks are read-only; no code/test implementation, no public fork GitHub Issue, no original Issue/PR/comment, no Index regrade. The canonical links for this one case are [Human](issue.md), [AI](constructor-sufficiency.md), [README](README.md). An internal Upstream PR may link to the fork receipt only after exact SHA readback. Initial fork control and metadata event are distinct from original #58 cohort status; no member of the prior 23 is marked unrun.
