@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "20261120T165314Z--deerflow-v0181-native-specific",
+  "recorded_at": "2026-11-20T16:53:14Z",
+  "actor": "OpenSiro ChatGPT independent operator (Upstream #58 v0.18.1 follow-up)",
+  "kind": "DECISION",
+  "decision": "same-case v0.18.1 native-specific refinement: proposal GO / research NEEDS_EVIDENCE; one durable subagent batch item; no product implementation",
+  "evidence_urls": [
+    "https://github.com/opensiro/upstream/issues/58#issuecomment-7045251917",
+    "https://github.com/bytedance/deer-flow/commit/e3edd05114c17d09082221a1ce1555bfbffeec16",
+    "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/de/deerflow.md"
+  ],
+  "note": "Existing 2026-11-19 case preserved. Source-native review path is hypothetical; structural validator/native tests not asserted. Control ACTIVE/ALLOW authorizes internal case metadata only; external and fork-public publication absent. No per-run Upstream status PR.",
+  "next_action": "Perform native end-to-end test of independent evidence -> optional batch acceptance hold -> safe bounded correction -> observed result before claiming implementation"
+}
